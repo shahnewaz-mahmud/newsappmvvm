@@ -16,4 +16,3 @@ struct News: Encodable, Decodable {
     let publishedAt: String?
     var content: String?
 }
-

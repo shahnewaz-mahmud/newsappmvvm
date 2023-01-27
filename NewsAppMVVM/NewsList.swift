@@ -7,7 +7,6 @@
 
 import Foundation
 
-struct NewsList : Encodable, Decodable {
-    var articles : [News]?
+struct NewsList: Encodable, Decodable {
+    var articles: [News]?
 }
-

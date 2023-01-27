@@ -8,24 +8,34 @@
 import UIKit
 
 class NewsTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var newsImage: UIImageView!
-    @IBOutlet weak var newsTitle: UILabel!
-    @IBOutlet weak var newsDescription: UILabel!
-    @IBOutlet weak var newsTime: UILabel!
-    @IBOutlet weak var newsAuthor: UILabel!
-    
-    @IBOutlet weak var newsBackground: UIView!
+    @IBOutlet var newsImage: UIImageView!
+    @IBOutlet var newsTitle: UILabel!
+    @IBOutlet var newsDescription: UILabel!
+    @IBOutlet var newsTime: UILabel!
+    @IBOutlet var newsAuthor: UILabel!
+    @IBOutlet var newsBackground: UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         newsBackground.layer.cornerRadius = 5
         newsImage.layer.cornerRadius = 20
-        
+
+        newsBackground.dropShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-    
+}
+
+extension UIView {
+    func dropShadow(scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOpacity = 0.15
+        layer.shadowOffset = CGSize.zero
+        layer.shadowRadius = 10
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
 }
