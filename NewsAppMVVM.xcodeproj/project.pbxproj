@@ -75,6 +75,8 @@
 		8907CB142983BE200031DA21 /* News Details */ = {
 			isa = PBXGroup;
 			children = (
+				8921703E2982712000493E1A /* NewsTableViewCell.swift */,
+				8921703F2982712000493E1A /* NewsTableViewCell.xib */,
 				8907CB1029839F510031DA21 /* NewsDetailsViewController.swift */,
 				8907CB122983A02C0031DA21 /* NewsDetailsViewModel.swift */,
 			);
@@ -102,22 +104,20 @@
 		8921702129826EBE00493E1A /* NewsAppMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				892170422982755500493E1A /* Constants.swift */,
+				892170442982778E00493E1A /* News.swift */,
+				89217046298277A200493E1A /* NewsList.swift */,
 				8921702229826EBE00493E1A /* AppDelegate.swift */,
 				8921702429826EBE00493E1A /* SceneDelegate.swift */,
+				892170482982803800493E1A /* ObservableObject.swift */,
+				8921704A2982820F00493E1A /* APIService.swift */,
 				8921703D29826F6900493E1A /* Home */,
 				8907CB142983BE200031DA21 /* News Details */,
 				8921702829826EBE00493E1A /* Main.storyboard */,
-				8921703E2982712000493E1A /* NewsTableViewCell.swift */,
-				8921703F2982712000493E1A /* NewsTableViewCell.xib */,
-				8921704A2982820F00493E1A /* APIService.swift */,
 				8921702E29826EC600493E1A /* Assets.xcassets */,
 				8921703029826EC600493E1A /* LaunchScreen.storyboard */,
 				8921703329826EC600493E1A /* Info.plist */,
 				8921702B29826EBE00493E1A /* NewsAppMVVM.xcdatamodeld */,
-				892170482982803800493E1A /* ObservableObject.swift */,
-				892170422982755500493E1A /* Constants.swift */,
-				892170442982778E00493E1A /* News.swift */,
-				89217046298277A200493E1A /* NewsList.swift */,
 			);
 			path = NewsAppMVVM;
 			sourceTree = "<group>";

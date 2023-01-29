@@ -29,6 +29,8 @@ class NewsTableViewCell: UITableViewCell {
 }
 
 extension UIView {
+    /// show dropshadow under a view
+    /// - Parameter scale: takes bool value to allow scaling
     func dropShadow(scale: Bool = true) {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.gray.cgColor

@@ -23,6 +23,7 @@ class NewsDetailsViewController: UIViewController {
         setupBinders()
     }
 
+    /// this is a binder function which executes whenever newsDetails is updated
     func setupBinders() {
         newsDetailsViewModel.newsDetails.bind { [weak self] newsDetails in
             self?.newsTitle.text = newsDetails?.title

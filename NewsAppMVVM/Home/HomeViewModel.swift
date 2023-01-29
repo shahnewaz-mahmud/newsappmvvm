@@ -12,6 +12,7 @@ class HomeViewModel {
     var newsList: ObservableObject<[News]?> = ObservableObject(nil)
     var isLoading: ObservableObject<Bool> = ObservableObject(false)
 
+    /// to fetch news from API and set the loading flag
     func fetchNews() {
         isLoading.value = true
         APIService.syncNews { [weak self] newsList in
@@ -20,6 +21,13 @@ class HomeViewModel {
         }
     }
 
+    /// navigate to newsDetails page when clicked on a news cell
+    ///
+    /// This function is used to go to the news details view controller
+    /// when a user clicked on a news cell of the tableview in homepage
+    /// - Parameters:
+    ///   - indexpath: index path of the selected tableView news cell
+    ///   - originVC: ViewController where the tableView is located
     func goToNewsDetailsPage(indexpath: IndexPath, originVC: HomeViewController) {
         let newsDetailsVC = UIStoryboard(
             name: "Main", bundle: nil
@@ -29,11 +37,8 @@ class HomeViewModel {
         guard let newsDetailsVC = newsDetailsVC else { return }
 
         newsDetailsVC.loadViewIfNeeded()
-        // UINavigationController(rootViewController: newsDetailsVC).pushViewController(newsDetailsVC, animated: true)
-
-        // detailVC.detailViewModel.sendArticle(currentArticle: articlesList.value?[indexPath.row])
 
         newsDetailsVC.newsDetailsViewModel.setNewsDetails(newsDetails: newsList.value?[indexpath.row])
-        originVC.present(newsDetailsVC, animated: true, completion: nil)
+        originVC.navigationController?.pushViewController(newsDetailsVC, animated: true)
     }
 }

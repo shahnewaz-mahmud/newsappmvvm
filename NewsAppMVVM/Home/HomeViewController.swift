@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet var loadingActivity: UIActivityIndicatorView!
+    @IBOutlet private var loadingActivity: UIActivityIndicatorView!
 
     var homeViewModel = HomeViewModel()
 
@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
         tableView.register(newsNib, forCellReuseIdentifier: Constants.newsTVCellId)
     }
 
+    /// This is a binder function to execute whenever newsList get updated
     func setupBinders() {
         homeViewModel.newsList.bind { [weak self] _ in
             DispatchQueue.main.async {
